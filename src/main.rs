@@ -141,7 +141,7 @@ fn main() -> Result<(), String> {
         mem::swap(&mut front_buffer, &mut back_buffer);
         canvas.copy(&front_buffer, None, None)?;
         canvas.present();
-        std::thread::sleep(std::time::Duration::from_millis(33));
+        std::thread::sleep(std::time::Duration::from_millis(16));
     }
     Ok(())
 }
