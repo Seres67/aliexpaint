@@ -105,7 +105,12 @@ fn main() -> Result<(), String> {
                     mouse_down = false;
                 }
                 Event::MouseMotion { x, y, .. } => {
-                    if x < 0 || x > WIDTH as i32 || y < 51 || y > HEIGHT as i32 {
+                    println!("y: {y}");
+                    if x < 0
+                        || x + 1 > (WIDTH - 1) as i32
+                        || y - 1 < 51
+                        || y + 1 > (HEIGHT - 1) as i32
+                    {
                         mouse_down = false;
                     }
                     for button in &mut buttons {
